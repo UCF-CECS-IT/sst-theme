@@ -1,4 +1,4 @@
-# Contributing to {{My Project}}
+# Contributing to SST Theme
 
 Thank you for your interest in contributing to this project!  If you are a developer for UCF and want to contribute to this theme, we'd love to hear from you.
 
@@ -120,7 +120,7 @@ In general, we keep conversations about distributed UCF WordPress projects in th
 
 Whenever you post a question in this Team, please include your **job title**, information about the **college or department** you work for, as well as the **site(s) you need help with** to help us help you more effectively.
 
-If you need help with using this theme on your site, please check out our [project documentation](https://github.com/UCF/{{My-Project}}/wiki) first.  If you can't find the answer to your question there, drop us a line in the [#help-themes channel](https://teams.microsoft.com/l/channel/19%3a8ade234408d44b93a02f01b1964d7856%40thread.skype/help-themes?groupId=5e3e72e2-3599-47b3-bcfc-bb3d5b579f12&tenantId=bb932f15-ef38-42ba-91fc-f3c59d5dd1f1).  You don't need to @mention anyone specific, but **please note that you're using the {{My Project}} when posting your question** and include a link to your site if it's relevant to your question.
+If you need help with using this theme on your site, please check out our [project documentation](https://github.com/UCF/{{My-Project}}/wiki) first.  If you can't find the answer to your question there, drop us a line in the [#help-themes channel](https://teams.microsoft.com/l/channel/19%3a8ade234408d44b93a02f01b1964d7856%40thread.skype/help-themes?groupId=5e3e72e2-3599-47b3-bcfc-bb3d5b579f12&tenantId=bb932f15-ef38-42ba-91fc-f3c59d5dd1f1).  You don't need to @mention anyone specific, but **please note that you're using the SST Theme when posting your question** and include a link to your site if it's relevant to your question.
 
 -----
 

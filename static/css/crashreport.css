@@ -1,0 +1,540 @@
+        @font-face {
+            font-family: Liberation;
+            src: url('../fonts/LiberationSerif-Regular.ttf')
+        }
+        @font-face {
+            font-family: Lymphatic;
+            src: url('../fonts/LYMPHATI.ttf')
+        }
+
+       :root {
+           --side-bar-width: 500px;
+           --map-select-button-height: 0px;
+           --top-navigation-bar-height: 70px;
+       }
+      #map {
+        height: calc(100% - var(--map-select-button-height) - var(--top-navigation-bar-height));
+        margin-top: var(--top-navigation-bar-height);
+        margin-left: var(--side-bar-width);
+      }
+
+      #interactive-map {
+        height: calc(100% - var(--top-navigation-bar-height));
+        margin-top: var(--top-navigation-bar-height);
+        margin-left: var(--side-bar-width);
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: top 30px;
+        padding: 0;
+        overflow:hidden;
+      }
+
+      #sidenav-address {
+          margin-top: 10%;
+          width: 90%;
+          font-size: 20px;
+      }
+
+      #interactive-search-label {
+          margin-top: 10%;
+          width: 90%;
+          font-size: 20px;
+          font-weight: normal;
+      }
+       #floating-panel {
+        margin-top: 100px;
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #floating-panel {
+        background-color: #fff;
+        border: 1px solid #999;
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: 5;
+      }
+
+      #zip-no-crash-view {
+        color: #fff;
+        white-space: nowrap;
+        float: none;
+        width: 90%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 5%;
+      }
+
+      #empty-data-zipcode-text {
+          font-style: italic;
+      }
+
+      #county-level-map-text {
+        color: #ffcc00; /* UCF Yellow text */
+        text-decoration: underline;
+      }
+
+      /* The side navigation menu */
+    #sidenav {
+        height: calc(100% - var(--top-navigation-bar-height)); /* 100% Full-height */
+        margin-top: var(--top-navigation-bar-height);
+        width: var(--side-bar-width); /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        overflow-y: hidden; /* Disable vertical scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        color: #ffcc00;
+        font-weight: bold;
+
+        /* The carousel was acting weird on animations of sidebar, we don't need them*/
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+    }
+
+      /* The side navigation menu */
+    #sidenav-interactive {
+        height: calc(100% - var(--top-navigation-bar-height)); /* 100% Full-height */
+        margin-top: var(--top-navigation-bar-height);
+        width: var(--side-bar-width); /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        overflow-y: hidden; /* Disable vertical scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        color: #ffcc00;
+        font-weight: normal
+
+        /* The carousel was acting weird on animations of sidebar, we don't need them*/
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+    }
+
+    .interactive-label {
+        font-weight: normal;
+    }
+
+    #sidenav hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #999;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    #situationalTrafficBarChart {
+        margin-left: -5%;
+    }
+
+    #sidenav #sidenav-options {
+    }
+
+    #sidenav #sidenav-zip {
+        background-color: #999; /* grey zip background */
+        color: #000; /* black text */
+        font-weight: normal;
+        font-size: 17px;
+    }
+
+    #sidenav-zip-text {
+        text-align: left;
+    }
+
+    #sidenav-zip-text-county {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #sidenav #sidenav-zipcode {
+        position: absolute;
+        bottom: 5%;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    #sidenav #sidenav-zipcode-inplace {
+        bottom: 5%;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    #interactive-link-holder {
+        margin-top: 6px;
+    }
+    #link-to-interactive {
+        font-weight: normal;
+        font-size: 17px;
+        text-decoration: underline;
+        color: #ffcc00 !important; /* UCF Yellow text */
+    }
+
+    .btn-select {
+        color: #FFFFFF;
+        background-color: #ffcc00 !important;
+    }
+
+    #bar-and-button {
+        display: flex;
+    }
+    #zipcodetextform {
+        width: 70%;
+    }
+    #search-button {
+        width: 20%;
+        float: right;
+        font-size: 15px !important;
+    }
+
+    #sidenav-options .form-check-label {
+        font-weight: lighter;
+    }
+
+    #btn-group {
+        margin-top: var(--top-navigation-bar-height);
+        margin-left: var(--side-bar-width);
+        display: block;
+        width: 100% - var(--side-bar-width);
+    }
+
+    #btn-group button {
+        width: 20%;
+        background-color: #111; /* Grey background */
+        border: 1px solid black; /* Green border */
+
+        color: #ffcc00; /* UCF Yellow text */
+        font-weight: bold; /* bold text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+        height: var(--map-select-button-height);
+    }
+
+    #btn-group button[selected] {
+        background-color: #000; /* Grey background */
+    }
+
+    #btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+    }
+
+    /* Clear floats (clearfix hack) */
+    #btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Add a background color on hover */
+    #btn-group button:hover {
+        background-color: #777;
+    }
+
+  #chart {
+    background-color: #fff;
+    }
+
+  #btn-group {
+    font-weight: normal;
+  }
+
+  #btn-group #btn-group-pedestrian {
+    font-weight: bold;
+  }
+
+  #no-crash-text {
+      margin-top: 60%;
+      font-size: 16px;
+  }
+
+  #empty-data-zipcode-text {
+      margin-top: 5%;
+  }
+
+  #empty-data-zipcode-text span{
+      font-size: 20px !important;
+  }
+
+  #zip-selected-back-button {
+      margin-top: 5%;
+      margin-left: 5%;
+  }
+
+  .modal-backdrop
+    {
+        opacity:0.25 !important;
+    }
+
+  .btn-warning {
+      font-size: 17px !important;
+      background-color: #ffcc00 !important; /* UCF Yellow text */
+  }
+
+  /* Firefox checkboxes were set to invisible for some reason? */
+  input[type=checkbox] {
+      -moz-appearance: checkbox;
+      height: initial;
+      width: initial;
+  }
+
+  input[type=radio] {
+      -moz-appearance: radio;
+      height: initial;
+      width: initial;
+  }
+
+  #address-search-button {
+      font-size: 14px !important;
+  }
+
+  .dot {
+  height: 20px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+  #traffic-dot-green {
+      background-color: #63d668;
+  }
+  #traffic-dot-yellow {
+      background-color: #FF974D;
+  }
+  #traffic-dot-red {
+      background-color: #f23c32;
+  }
+
+  #gmaps-legend {
+      margin-top: 12%;
+      font-weight: normal;
+  }
+
+  .traffic-legend {
+      font-size: 20px;
+  }
+
+  .crash-bar-chart {
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .show-path-button {
+      margin-bottom: 10px;
+      font-size: 20px;
+      margin-left: 5%;
+  }
+
+  .unselectable {
+    cursor: pointer;
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+  }
+.chart-container {
+    width: 500px;
+    height:400px;
+    text-align: center;
+    margin-left:50px;
+    margin-bottom:10px;
+    color:#fff;
+}
+
+.siema-row {
+    margin-top: 10%;
+}
+
+.siema-slide {
+    height: 100%;
+    width: 100%;
+}
+
+div #crashtype-dropdown-container {
+    color: #000 !important;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+div #crashtype-dropdown-container .dropdown-menu-center {
+    text-align: center;
+    background-color: #FFF;
+    /*background-color: #ffcc00 !important;*/
+}
+
+div #crashtype-dropdown-container .btn.focus{
+    color: #FFFFFF !important;
+}
+div #crashtype-dropdown-container .btn.hover{
+    color: #FFFFFF !important;
+}
+div #crashtype-dropdown-container .btn:focus{
+    color: #FFFFFF !important;
+}
+div #crashtype-dropdown-container .btn:hover{
+    color: #FFFFFF !important;
+}
+
+div #crashtype-dropdown-container a {
+    color: #000 !important;
+}
+div #crashtype-dropdown-container a.focus{
+    color: #FFF !important;
+    background-color: #ffcc00;
+}
+div #crashtype-dropdown-container a.hover{
+    color: #FFF !important;
+    background-color: #ffcc00;
+}
+div #crashtype-dropdown-container a:focus{
+    color: #FFF !important;
+    background-color: #ffcc00;
+}
+div #crashtype-dropdown-container a:hover{
+    color: #FFF !important;
+    background-color: #ffcc00;
+}
+
+#safety-facts {
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#sidenav-title {
+    font-size: 24px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#siema-header {
+    text-align: center;
+    color: #AAA; /* Grey Text */
+    font-size: 30px;
+}
+
+#horizontal-bar-holder {
+    margin-top: 20%;
+    width: 90%;
+}
+
+#clock-thing {
+    cursor: default !important;
+}
+#clock {
+    cursor: default !important;
+}
+.date {
+    font-size: 17.5px;
+    margin-bottom: 30px !important;
+}
+.time {
+    font-size: 35px !important;
+    font-weight: bold;
+}
+
+.siema-slide .carousel-top{
+    text-align: center;
+    color: #ffcc00; /* UCF Yellow text */
+    margin-top: 5%;
+    font-size: 25px;
+    font-family: Liberation;
+}
+
+.siema-slide .carousel-data{
+    text-align: center;
+    color: #ffcc00; /* UCF Yellow text */
+    font-family: Lymphatic;
+}
+
+.siema-slide .carousel-bottom{
+    text-align: center;
+    color: #FFF;
+    margin-top: 5%;
+    font-size: 20px;
+    font-family: Lymphatic;
+}
+
+.bar-chart-container {
+  /*  width: 200px;
+    height:200px;
+    text-align: center;
+    margin-left:50px;
+    margin-bottom:10px;
+    color:#fff;*/
+}
+.chart-container h3{
+ margin-top:10px;
+    color:#fff;
+}
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+@media only screen and (max-width:600px), screen and (max-height: 800px) {
+    #sidenav #sidenav-zipcode {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+   :root {
+       --side-bar-width: 250px;
+       --map-select-button-height: 40px;
+       --top-navigation-bar-height: 70px;
+   }
+}
+
+@media only screen and (max-width:768px) {
+   :root {
+       --side-bar-width: 0px;
+       --map-select-button-height: 40px;
+       --top-navigation-bar-height: 60px;
+   }
+
+   #sidenav {
+       visibility: hidden;
+   }
+}

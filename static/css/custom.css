@@ -1,0 +1,198 @@
+       :root {
+           --side-bar-width: 13%;
+           --map-select-button-height: 40px;
+           --top-navigation-bar-height: 70px;
+       }
+      #map {
+    /*    height: calc(100% - var(--map-select-button-height) - var(--top-navigation-bar-height));
+        margin-top: 0px;
+        margin-left: var(--side-bar-width);*/
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: top 30px;
+        padding: 0;
+    /*    overflow:hidden;*/
+      }
+       #floating-panel {
+        margin-top: 100px;
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #floating-panel {
+        background-color: #fff;
+        border: 1px solid #999;
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: 5;
+      }
+
+      /* The side navigation menu */
+    #sidenav {
+        height: 100%; /* 100% Full-height */
+        width: var(--side-bar-width); /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        color: #ffcc00;
+        font-weight: bold;
+    }
+
+    #sidenav hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #999;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    #sidenav #sidenav-options {
+        margin-top: var(--top-navigation-bar-height);
+    }
+
+    #sidenav #sidenav-zip {
+        background-color: #999; /* grey zip background */
+        color: #000; /* black text */
+        font-weight: normal;
+    }
+
+    #sidenav-text {
+    }
+
+    #sidenav #sidenav-zipcode {
+        position: absolute;
+        bottom: 5%;
+    }
+
+    #sidenav-options .form-check-label {
+        font-weight: lighter;
+    }
+
+    #btn-group {
+        margin-top: var(--top-navigation-bar-height);
+        margin-left: var(--side-bar-width);
+        display: block;
+        width: 100% - var(--side-bar-width);
+    }
+
+    #btn-group button {
+        width: 50%;
+        background-color: #aaa; /* Grey background */
+        border: 1px solid black; /* Green border */
+
+        color: #ffcc00; /* UCF Yellow text */
+        font-weight: bold; /* bold text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+        height: var(--map-select-button-height);
+    }
+
+    #btn-group button[selected] {
+        background-color: #000; /* Grey background */
+    }
+
+    #btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+    }
+
+    /* Clear floats (clearfix hack) */
+    #btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Add a background color on hover */
+    #btn-group button:hover {
+        background-color: #777;
+    }
+
+  #chart {
+    background-color: #fff;
+    }
+
+  /* Firefox checkboxes were set to invisible for some reason? */
+  input[type=checkbox] {
+      -moz-appearance: checkbox;
+      height: initial;
+      width: initial;
+  }
+
+  .unselectable {
+    cursor: pointer;
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+  }
+.chart-container {
+    width: 500px;
+    height:400px;
+    text-align: center;
+    margin-left:50px;
+    margin-bottom:10px;
+    color:#fff;
+}
+.bar-chart-container {
+  /*  width: 200px;
+    height:200px;
+    text-align: center;
+    margin-left:50px;
+    margin-bottom:10px;
+    color:#fff;*/
+}
+.chart-container h3{
+ margin-top:10px;
+    color:#fff;
+}
+
+
+
+.modal-body {
+    color: #000;
+}
+.red-tooltip + .tooltip.top > .tooltip-arrow {COLOR:#fff;background-color: #f00;}
+
+
+
+
+
+
+#map2
+{
+  height: 90%
+}
+
+#realTimeMap
+{
+  height: 90%
+}
+.mybutton{
+  background-color: #17a2b8
+  color:#fff;
+
+}
